@@ -15,23 +15,31 @@ class ViewController: UIViewController {
     let eggTimes : [String : Int] = ["Soft": 5, "Medium": 7, "Hard": 12]
     var timer = Timer()
     
-
+    @IBOutlet weak var ProgressBar: UIProgressView!
+    
     @IBAction func HardnessSelected(_ sender: UIButton) {
         
         timer.invalidate()
         
+        
         let hardness : String? = sender.currentTitle
-        var secondsRemaining = 0
+        var totalTime = 0
+        var secondsPassed = 0
+        self.ProgressBar.progress = 0
+
         
         switch hardness {
         case "Soft":
-            secondsRemaining = 3
+            totalTime = 3
+            self.titleLabel.text = "Soft"
             print(eggTimes["Soft"]!)
         case "Medium":
-            secondsRemaining = 410
+            totalTime = 4
+            self.titleLabel.text = "Medium"
             print(eggTimes["Medium"]!)
         case "Hard":
-            secondsRemaining = 12
+            totalTime = 700
+            self.titleLabel.text = "Hard"
             print(eggTimes["Hard"]!)
         default:
             print("Error")
@@ -40,9 +48,11 @@ class ViewController: UIViewController {
         
             
             timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { (Timer) in
-                if secondsRemaining > 0 {
-                    print ("\(secondsRemaining) seconds")
-                    secondsRemaining -= 1
+                if secondsPassed < totalTime {
+                    secondsPassed += 1
+                    let percentageProgress = Float(secondsPassed) / Float(totalTime)
+                    self.ProgressBar.progress = Float(percentageProgress)
+
                 } else {
                     Timer.invalidate()
                     self.titleLabel.text = "DONE!"
