@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var questionText: UILabel!
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var TrueBtn: UIButton!
+    @IBOutlet weak var scoreKeep: UILabel!
     @IBOutlet weak var FalseBtn: UIButton!
     
     var quizBrain = QuizBrain()
@@ -27,34 +28,32 @@ class ViewController: UIViewController {
 
     @IBAction func AnswerBtnPressed(_ sender: UIButton) {
         let userAnswer = sender.currentTitle! // True/False
-        let actualAnswer = quiz[questionNumber].answer
-        quizBrain.checkAnswer(userAnswer)
+        let userGotItRight = quizBrain.checkAnswer(userAnswer)
         
 //      Changes the highlighting of user answer to match the button
         sender.layer.cornerRadius = 0.3 * sender.bounds.size.height
         
-        if userAnswer == actualAnswer {
+        if userGotItRight {
             sender.backgroundColor = UIColor.green
         } else {
             sender.backgroundColor = UIColor.red
         }
         
-        if questionNumber + 1 < quiz.count{
-            questionNumber += 1
-        } else {
-            questionNumber = 0
-        }
+        quizBrain.nextQuestion()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
             self.updateUI()
         }
     }
     
+
+    
     func updateUI(){
-        questionText.text = quiz[questionNumber].text
+        questionText.text = quizBrain.getQuestionText()
         TrueBtn.backgroundColor = UIColor.clear
         FalseBtn.backgroundColor = UIColor.clear
-        progressBar.progress = Float(questionNumber + 1) / Float(quiz.count)
+        progressBar.progress = quizBrain.getProgress()
+        scoreKeep.text = "Score: \(String(quizBrain.getScore()))"
     }
     
 }
