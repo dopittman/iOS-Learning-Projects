@@ -1,19 +1,18 @@
 //
-//  ViewController.swift
+//  QuizBrain.swift
 //  Quizzler-iOS13
 //
-//  Created by Angela Yu on 12/07/2019.
-//  Copyright © 2019 The App Brewery. All rights reserved.
+//  Created by David Pittman on 1/23/22.
+//  Copyright © 2022 The App Brewery. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-class ViewController: UIViewController {
+struct QuizBrain {
     
-    @IBOutlet weak var questionText: UILabel!
-    @IBOutlet weak var progressBar: UIProgressView!
-    @IBOutlet weak var TrueBtn: UIButton!
-    @IBOutlet weak var FalseBtn: UIButton!
+//  Variables
+    
+    var questionNumber = 0
     
     let quiz = [
         Question(q: "A slug's blood is green.", a: "True"),
@@ -31,36 +30,14 @@ class ViewController: UIViewController {
 
     ]
     
-    var questionNumber = 0
+//  Methods
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        updateUI()
-    }
-
-    @IBAction func AnswerBtnPressed(_ sender: UIButton) {
-        let userAnswer = sender.currentTitle // True/False
-        let actualAnswer = quiz[questionNumber].answer
-        
-        if userAnswer == actualAnswer {
-            print("Right")
+    func checkAnswer(_ userAnswer: String){
+        if userAnswer == quiz[questionNumber].answer {
+            //User got it right
         } else {
-            print("Wrong")
+            //User got it wrong
         }
-        
-        if questionNumber + 1 < quiz.count{
-            questionNumber += 1
-        } else {
-            questionNumber = 0
-        }
-        updateUI()
-    }
-    
-    func updateUI(){
-        questionText.text = quiz[questionNumber].text
     }
     
 }
-
