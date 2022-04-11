@@ -10,7 +10,10 @@
 		F34E41F32803858E00199A49 /* PersonalCardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E41F22803858E00199A49 /* PersonalCardApp.swift */; };
 		F34E41F52803858E00199A49 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E41F42803858E00199A49 /* ContentView.swift */; };
 		F34E41F72803858F00199A49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F34E41F62803858F00199A49 /* Assets.xcassets */; };
-		F34E41FA2803858F00199A49 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F34E41F92803858F00199A49 /* Preview Assets.xcassets */; };
+		F34E42032803878800199A49 /* Nunito-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F34E42012803878700199A49 /* Nunito-VariableFont_wght.ttf */; };
+		F34E42062803897C00199A49 /* Nunito.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F34E42052803897C00199A49 /* Nunito.ttf */; };
+		F3E936C12804BD38004F9923 /* Trophy.png in Resources */ = {isa = PBXBuildFile; fileRef = F3E936C02804BD38004F9923 /* Trophy.png */; };
+		F3E936C42804DD97004F9923 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E936C32804DD97004F9923 /* InfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,7 +21,11 @@
 		F34E41F22803858E00199A49 /* PersonalCardApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalCardApp.swift; sourceTree = "<group>"; };
 		F34E41F42803858E00199A49 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F34E41F62803858F00199A49 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F34E41F92803858F00199A49 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F34E42012803878700199A49 /* Nunito-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Nunito-VariableFont_wght.ttf"; path = "../../../../../../../../../Downloads/Nunito/Nunito-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		F34E42052803897C00199A49 /* Nunito.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Nunito.ttf; path = ../../../../../../../../../Downloads/Nunito/Nunito.ttf; sourceTree = "<group>"; };
+		F34E4207280389F500199A49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		F3E936C02804BD38004F9923 /* Trophy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Trophy.png; path = ../../../../../../../GameArt/TaskHero/trophyartpack/Trophy_Art_Pack_png/Trophy.png; sourceTree = "<group>"; };
+		F3E936C32804DD97004F9923 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,20 +58,24 @@
 		F34E41F12803858E00199A49 /* PersonalCard */ = {
 			isa = PBXGroup;
 			children = (
+				F34E4207280389F500199A49 /* Info.plist */,
+				F34E42002803876900199A49 /* Fonts */,
 				F34E41F22803858E00199A49 /* PersonalCardApp.swift */,
 				F34E41F42803858E00199A49 /* ContentView.swift */,
+				F3E936C32804DD97004F9923 /* InfoView.swift */,
 				F34E41F62803858F00199A49 /* Assets.xcassets */,
-				F34E41F82803858F00199A49 /* Preview Content */,
+				F3E936C02804BD38004F9923 /* Trophy.png */,
 			);
 			path = PersonalCard;
 			sourceTree = "<group>";
 		};
-		F34E41F82803858F00199A49 /* Preview Content */ = {
+		F34E42002803876900199A49 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				F34E41F92803858F00199A49 /* Preview Assets.xcassets */,
+				F34E42052803897C00199A49 /* Nunito.ttf */,
+				F34E42012803878700199A49 /* Nunito-VariableFont_wght.ttf */,
 			);
-			path = "Preview Content";
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,8 +136,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F34E41FA2803858F00199A49 /* Preview Assets.xcassets in Resources */,
+				F34E42032803878800199A49 /* Nunito-VariableFont_wght.ttf in Resources */,
 				F34E41F72803858F00199A49 /* Assets.xcassets in Resources */,
+				F34E42062803897C00199A49 /* Nunito.ttf in Resources */,
+				F3E936C12804BD38004F9923 /* Trophy.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F34E41F52803858E00199A49 /* ContentView.swift in Sources */,
+				F3E936C42804DD97004F9923 /* InfoView.swift in Sources */,
 				F34E41F32803858E00199A49 /* PersonalCardApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,6 +284,7 @@
 				DEVELOPMENT_TEAM = P6M7J359RJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PersonalCard/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -299,6 +314,7 @@
 				DEVELOPMENT_TEAM = P6M7J359RJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PersonalCard/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
