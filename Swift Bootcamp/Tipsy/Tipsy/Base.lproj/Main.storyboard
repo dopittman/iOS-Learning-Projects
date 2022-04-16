@@ -127,12 +127,25 @@
                                             <constraint firstAttribute="trailing" secondItem="QDm-4I-R22" secondAttribute="trailing" constant="30" id="tPk-Tm-mVc"/>
                                         </constraints>
                                     </stackView>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter a bill total above" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gab-yA-VuS">
+                                        <rect key="frame" x="25" y="519" width="365" height="33"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="365" id="GUY-pL-U1K"/>
+                                            <constraint firstAttribute="height" constant="33" id="Ned-Gs-xK7"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.84362953900000004" green="0.97556561230000005" blue="0.92320168020000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="NtY-F4-RSD" firstAttribute="leading" secondItem="EOv-ot-7Fq" secondAttribute="leading" constant="20" id="3Na-jg-YoM"/>
                                     <constraint firstItem="NtY-F4-RSD" firstAttribute="top" secondItem="EOv-ot-7Fq" secondAttribute="top" constant="20" id="BDT-pf-BlM"/>
+                                    <constraint firstAttribute="trailing" secondItem="gab-yA-VuS" secondAttribute="trailing" constant="24" id="FQU-tB-NVi"/>
                                     <constraint firstAttribute="trailing" secondItem="NtY-F4-RSD" secondAttribute="trailing" constant="20" id="KbR-NJ-DEv"/>
+                                    <constraint firstItem="gab-yA-VuS" firstAttribute="leading" secondItem="EOv-ot-7Fq" secondAttribute="leading" constant="25" id="mmt-pq-a9l"/>
+                                    <constraint firstAttribute="bottom" secondItem="gab-yA-VuS" secondAttribute="bottom" constant="146" id="v5F-Cx-vPZ"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="C9X-5R-fQ6">
@@ -200,10 +213,12 @@
                     </view>
                     <connections>
                         <outlet property="billTextField" destination="wcN-ka-Q4F" id="gpM-cZ-eB9"/>
+                        <outlet property="billTotalEmptyLabel" destination="gab-yA-VuS" id="kYC-Lz-poD"/>
                         <outlet property="splitNumberLevel" destination="bSy-Yc-886" id="KRM-XW-6Z9"/>
                         <outlet property="tenPercentBtn" destination="7y6-Kf-yF0" id="Sij-1C-FNo"/>
                         <outlet property="twentyPercentBtn" destination="UtR-dU-EKt" id="HqJ-4A-juF"/>
                         <outlet property="zeroPercentBtn" destination="XzR-0E-Xf7" id="dHH-mh-VYE"/>
+                        <segue destination="Dnf-m2-FPm" kind="presentation" identifier="goToResult" id="Xmd-Uv-ORZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -215,7 +230,7 @@
             <objects>
                 <viewController id="Dnf-m2-FPm" customClass="ResultsViewController" customModule="Tipsy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DNW-gk-FsX">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZCe-Te-efL">
@@ -252,7 +267,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zzn-9K-6hu">
-                                <rect key="frame" x="107" y="808" width="200" height="54"/>
+                                <rect key="frame" x="107" y="788" width="200" height="54"/>
                                 <color key="backgroundColor" red="0.0" green="0.69019607839999997" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="0Lh-eY-3GO"/>
